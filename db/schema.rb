@@ -17,12 +17,22 @@ ActiveRecord::Schema.define(version: 20150803010609) do
   enable_extension "plpgsql"
 
   create_table "carpenters", force: :cascade do |t|
+    t.string  "name"
+    t.string  "company"
+    t.string  "email"
+    t.integer "phone_number"
+    t.integer "zipcode"
   end
 
   create_table "goods", force: :cascade do |t|
+    t.string  "type"
+    t.integer "price"
+    t.string  "photo_url"
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
   end
 
 end
