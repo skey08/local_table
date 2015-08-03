@@ -5,14 +5,15 @@ class GoodsController < ApplicationController
   end
 
   def new
+    @carpenter = Carpenter.find(session[:user]["id"])
     @good = Good.new
   end
 
   def create
     @carpenter = Carpenter.find(session[:user]["id"])
-    @good = Good.create!(good_params.merge(carpenter: session[:user]["name"]))
+    @good = @carpenter.goods.build(params[:good])
       if @good.save
-        redirect_to good_path(@good)
+        redirect_to carpenter_good_path(@good)
       else
         render 'new'
       end
@@ -30,13 +31,13 @@ class GoodsController < ApplicationController
   def update
     @good = Good.find(params[:id])
     @good.update(good_params)
-    redirect_to good_path(@good)
+    redirect_to carpenter_good_path(@good)
   end
 
   def destroy
     @good = Good.find(params[:id])
     @good.destroy
-    redirect_to goods_path
+    redirect_to carpenter_goods_path
   end
 
   private

@@ -4,6 +4,7 @@ class CreateGoods < ActiveRecord::Migration
       t.string :type
       t.integer :price
       t.string :photo_url
+      t.references :carpenter, index: true, foreign_key: true
     end
   end
 end

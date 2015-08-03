@@ -1,3 +1,3 @@
 class Good < ActiveRecord::Base
-  belongs_to :Carpenter
+  belongs_to :carpenter
 end

@@ -1,3 +1,44 @@
+body{
+  font-family: 'Helvetica';
+  max-width: 60em;
+  margin:auto;
+  padding: 1em;
+  background-color: "eggshell";
+  color: #476C91;
+}
+
+h1 {
+  text-align: center;
+  font-size: 42pt;
+}
+
+li {
+  font-size: 26pt;
+}
+
+a {
+  font-size: 15pt;
+  text-align: right;
+  margin: 4pt;
+  text-decoration: none;
+}
+
+input {
+  width: 13em;
+  height: 1.5em;
+  text-align: left;
+  margin-right: 1em;
+  margin-bottom: .5em;
+  display: block
+}
+
+.style_image {
+  margin: inherit;
+}
+
+
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

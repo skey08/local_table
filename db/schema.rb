@@ -29,11 +29,15 @@ ActiveRecord::Schema.define(version: 20150803154422) do
     t.string  "type"
     t.integer "price"
     t.string  "photo_url"
+    t.integer "carpenter_id"
   end
+
+  add_index "goods", ["carpenter_id"], name: "index_goods_on_carpenter_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
   end
 
+  add_foreign_key "goods", "carpenters"
 end
