@@ -1,0 +1,14 @@
+<h2><%= @carpenter.name %> <a href="/carpenters/<%= @carpenter.id %>/edit">*Edit</a></h2>
+<h2><%= @carpenter.company %></h2>
+<h4><%= @carpenter.email %></h4>
+<h4><%= @carpenter.phone_number %></h4>
+<h4><%= @carpenter.zipcode %></h4>
+
+<h3>Goods <%= link_to "(+)", new_carpenter_good_path(@carpenter) %></h3>
+<ul>
+  <% @carpenter.goods.each do |good| %>
+    <ul>
+      <%= link_to "#{good.type} (#{good.price})", carpenter_good_path(@carpenter, good) %>
+    </ul>
+  <% end %>
+</ul>      

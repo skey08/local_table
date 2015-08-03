@@ -9,8 +9,13 @@ class GoodsController < ApplicationController
   end
 
   def create
-    @good = Good.create!(good_params)
-    redirect_to (good_path(@good))
+    @carpenter = Carpenter.find(session[:user]["id"])
+    @good = Good.create!(good_params.merge(carpenter: session[:user]["name"]))
+      if @good.save
+        redirect_to good_path(@good)
+      else
+        render 'new'
+      end
   end
 
   def show

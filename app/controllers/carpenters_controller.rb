@@ -9,8 +9,13 @@ class CarpentersController < ApplicationController
   end
 
   def create
-    @carpenter = Carpenter.create!(carpenter_params)
-    redirect_to (carpenter_path(@carpenter))
+    @user = User.find(session[:user]["id"])
+    @carpenter = @user.carpenters.create!(carpenter_params)
+      if @carpenter.save
+        redirect_to (carpenter_path(@carpenter))
+      else
+        render 'new'
+      end
   end
 
   def show

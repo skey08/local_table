@@ -4,8 +4,8 @@ class CreateCarpenters < ActiveRecord::Migration
       t.string :name
       t.string :company
       t.string :email
-      t.integer :phone_number
-      t.integer :zipcode
+      t.string :phone_number
+      t.string :zipcode
     end
   end
 end

@@ -1,3 +1,4 @@
 class Carpenter < ActiveRecord::Base
-  has_many :goods
+  has_many :goods, dependent: :destroy
+  belongs_to :user
 end
