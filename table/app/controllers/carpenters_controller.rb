@@ -1,2 +1,0 @@
-class CarpentersController < ApplicationController
-end

@@ -1,28 +1,10 @@
-== README
+Local Table is an online marketplace where craftsmen can sell the furniture they make and consumers can easily find great furniture from their own towns and cities.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Wireframes are located inside an issue on my repo
 
-Things you may want to cover:
+The site will initially pull from the DMV.
 
-* Ruby version
+-A user will make a personal log-in for the site -A user will be able to browse furniture by maker or by type. -The user will be able to “heart” goods that appeal to them while browsing and
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+-view all of their "hearts" in one place.
+-All goods will provide cost and contact information for its maker -A craftsmen will have the ability to post his/her goods on the site
