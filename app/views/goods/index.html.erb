@@ -2,7 +2,7 @@
 <ul>
   <% @carpenter.goods.each do |good| %>
     <ul>
-      <%= link_to "#{good.type} (#{good.price})", carpenter_good_path(@carpenter, good) %>
+      <%= link_to "#{good.make} (#{good.price})", carpenter_good_path(@carpenter, good) %>
     </ul>
   <% end %>
 </ul>

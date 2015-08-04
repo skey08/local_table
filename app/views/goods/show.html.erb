@@ -1,3 +1,4 @@
-<h2><%= @good.type %><a href="/goods/<%= @good.id %>/edit">*edit</a></h2>
-<h2>Price:  <%= @good.price %></h2>
-<img class= 'good-photo' src="<%= @good.photo_url" %>">
+<h2><%= @good.make %> <%= link_to "Edit", edit_carpenter_good_path(@carpenter, @good) %> </h2>
+
+<h2>Price: $<%= @good.price %></h2>
+<img class= "good-photo" src= <%= @good.photo_url %> >

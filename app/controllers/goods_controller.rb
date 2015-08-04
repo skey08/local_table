@@ -2,36 +2,43 @@ class GoodsController < ApplicationController
 
   def index
     @goods = Good.all
+    @carpenter = Carpenter.find(params[:carpenter_id])
   end
 
   def new
-    @carpenter = Carpenter.find(session[:user]["id"])
+    @carpenter = Carpenter.find(params[:carpenter_id])
     @good = Good.new
   end
 
   def create
-    @carpenter = Carpenter.find(session[:user]["id"])
-    @good = @carpenter.goods.build(params[:good])
+    @carpenter = Carpenter.find(params[:carpenter_id])
+    @good = @carpenter.goods.new(good_params)
       if @good.save
-        redirect_to carpenter_good_path(@good)
+        redirect_to carpenter_goods_path(@carpenter)
       else
         render 'new'
       end
   end
 
   def show
+    @carpenter = Carpenter.find(params[:carpenter_id])
     @good = Good.find(params[:id])
   end
 
   def edit
+    @carpenter = Carpenter.find(params[:carpenter_id])
     @good = Good.find(params[:id])
   end
 
 
   def update
+    @carpenter = Carpenter.find(params[:carpenter_id])
     @good = Good.find(params[:id])
-    @good.update(good_params)
-    redirect_to carpenter_good_path(@good)
+      if @good.save
+        redirect_to carpenter_goods_path(@carpenter, @good)
+      else
+        render 'edit'
+      end
   end
 
   def destroy
@@ -42,6 +49,6 @@ class GoodsController < ApplicationController
 
   private
   def good_params
-    params.require(:good).permit(:type, :price, :photo_url)
+    params.require(:good).permit(:make, :price, :photo_url)
   end
 end

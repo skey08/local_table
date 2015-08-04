@@ -1,7 +1,7 @@
-<%= form_for @good do |f| %>
+<%= form_for [@carpenter, @good] do |f| %>
 <p>
-  <%= f.label :type %>
-  <%= f.text_field :type %>
+  <%= f.label :make %>
+  <%= f.text_field :make %>
 </p>
 <p>
   <%= f.label :price %>

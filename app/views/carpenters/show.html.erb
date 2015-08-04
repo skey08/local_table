@@ -6,9 +6,14 @@
 
 <h3>Goods <%= link_to "(+)", new_carpenter_good_path(@carpenter) %></h3>
 <ul>
-  <% @carpenter.goods.each do |good| %>
+  <%= @carpenter.goods.each do |good| %>
+    <%= @good.make %>
+    <%= @good.price %>
+    <%= @good.photo_url %>
     <ul>
-      <%= link_to "#{good.type} (#{good.price})", carpenter_good_path(@carpenter, good) %>
+
     </ul>
   <% end %>
-</ul>      
+</ul>
+
+<%= link_to 'Back', carpenters_path %>
