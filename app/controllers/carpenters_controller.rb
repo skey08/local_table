@@ -20,7 +20,6 @@ class CarpentersController < ApplicationController
   end
 
   def show
-    @good = Good.find(params[:id])
   end
 
   def edit

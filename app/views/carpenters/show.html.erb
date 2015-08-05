@@ -1,10 +1,13 @@
-<h2><%= @carpenter.name %> <a href="/carpenters/<%= @carpenter.id %>/edit">*Edit</a></h2>
-<h2><%= @carpenter.company %></h2>
+<h2><%= @carpenter.name %> || <%= @carpenter.company %></h2>
 
-<h4>Contact: <%= @carpenter.email %></h4>
-<h4>Phone Number:<%= @carpenter.phone_number %></h4>
-<h4>Zip: <%= @carpenter.zipcode %></h4>
+<div class="carpenterbio">
+  <p>Contact: <%= @carpenter.email %></p>
+  <p>Phone Number:<%= @carpenter.phone_number %></p>
+  <p>Zip: <%= @carpenter.zipcode %></p>
+  <a href="/carpenters/<%= @carpenter.id %>/edit">*edit</a>
+<div>
 
+<div class="goods">
 <h3>Goods <%= link_to "(+)", new_carpenter_good_path(@carpenter) %></h3>
 <ul>
   <% @carpenter.goods.each do |good| %>
@@ -14,5 +17,6 @@
     </ul>
   <% end %>
 </ul>
+</div>
 
 <%= link_to 'Back', carpenters_path %>

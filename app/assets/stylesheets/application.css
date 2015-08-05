@@ -1,10 +1,11 @@
 body{
-  font-family: 'Helvetica';
+  font-family: 'lucida grande';
   max-width: 60em;
-  margin:auto;
-  padding: 1em;
-  background-color: "eggshell";
-  color: #476C91;
+  /*margin:20px;
+  padding:20px;*/
+  background-color: white;
+  color: #4F4F55;
+  text-align: center;
 }
 
 h1 {
@@ -14,12 +15,13 @@ h1 {
 
 li {
   font-size: 26pt;
+  text-align: center;
 }
 
 a {
-  font-size: 15pt;
-  text-align: right;
-  margin: 4pt;
+  color: inherit;
+  font-size: 14pt;
+  text-align: center;
   text-decoration: none;
 }
 
@@ -38,8 +40,21 @@ input {
 
 .good-photo {
   width: 550px;
+  border: 2pt solid gray;
+  margin: 10pt;
 }
 
+div.carpenters {
+    margin:20px;
+    padding:20px;
+    text-decoration: none;
+}
+
+nav {
+  display: inline;
+  width: 60px;
+  text-shadow: 20pt;
+}
 
 
 
