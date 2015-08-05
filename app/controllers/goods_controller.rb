@@ -2,7 +2,6 @@ class GoodsController < ApplicationController
 
   def index
     @goods = Good.all
-    @carpenter = Carpenter.find(params[:carpenter_id])
   end
 
   def new

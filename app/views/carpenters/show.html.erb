@@ -1,17 +1,16 @@
 <h2><%= @carpenter.name %> <a href="/carpenters/<%= @carpenter.id %>/edit">*Edit</a></h2>
 <h2><%= @carpenter.company %></h2>
+<%= "Contact:" %>
 <h4><%= @carpenter.email %></h4>
-<h4><%= @carpenter.phone_number %></h4>
-<h4><%= @carpenter.zipcode %></h4>
+<h4>Phone Number:<%= @carpenter.phone_number %></h4>
+<h4>Zip: <%= @carpenter.zipcode %></h4>
 
 <h3>Goods <%= link_to "(+)", new_carpenter_good_path(@carpenter) %></h3>
 <ul>
-  <%= @carpenter.goods.each do |good| %>
-    <%= @good.make %>
-    <%= @good.price %>
-    <%= @good.photo_url %>
+  <% @carpenter.goods.each do |good| %>
     <ul>
-
+      <%= link_to "#{good.make}:", carpenter_good_path(@carpenter, good) %> <%= "$#{good.price}" %> <br>
+      <img class = 'good-photo' src="<%= good.photo_url %>">
     </ul>
   <% end %>
 </ul>
