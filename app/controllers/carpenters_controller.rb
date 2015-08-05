@@ -1,9 +1,13 @@
 class CarpentersController < ApplicationController
-    before_action :set_post, only: [:show, :edit, :update, :destroy]
-    before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
+    before_action :set_carpenter, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_user!, except: [:edit, :show]
 
   def index
-    @carpenters = current_user.carpenters
+    # if current_user
+    #   @carpenters = current_user.carpenters
+    # else
+      @carpenters = Carpenter.all
+    # end
   end
 
   def new
@@ -20,39 +24,22 @@ class CarpentersController < ApplicationController
   end
 
   def show
-    @carpenter = Carpenter.find(params[:id])
-    @good = @carpenter.goods
   end
 
   def edit
-    @carpenter = Carpenter.find(params[:id])
   end
 
 
   def update
-    @carpenter = Carpenter.find(params[:id])
-    # if session[:user]["id"] != @user.id
-    #   message = "You Can't Edit Other Carpenters!"
-    #   flash.now[:notice] = message
-    #   render :show
-    # else
-    #   message = "Go ahead and edit your carpenter page."
-    #   flash[:notice] = message
+    if @carpenter.user.id == current_user.id
       @carpenter.update(carpenter_params)
+    end
       redirect_to carpenter_path(@carpenter)
   end
 
   def destroy
-    @carpenter = Carpenter.find(params[:id])
-    # if session[:user]["id"] != @user.id
-    #   message = "You Can't Delete Other Carpenters!"
-    #   flash.now[:notice] = message
-    #   render :show
-    # else
-    #   message = "You've Successfully Deleted Your carpenter page."
-      @carpenter.destroy
+    @carpenter.destroy
       redirect_to root_url
-    #   flash[:notice] = message
   end
 
 
@@ -60,5 +47,7 @@ class CarpentersController < ApplicationController
   def carpenter_params
     params.require(:carpenter).permit(:name, :company, :email, :phone_number, :zipcode)
   end
-
+  def set_carpenter
+    @carpenter = Carpenter.find(params[:id])
+  end
 end

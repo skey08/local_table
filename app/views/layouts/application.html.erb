@@ -9,10 +9,10 @@
 <body>
   <%= image_tag "/logo.png", :class => "style_image" %>
   <% if current_user %>
-    <h3><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>
+    <h3><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></h3>
   <% else %>
-    <h3><%= link_to 'Signup', new_user_registration_path %></h3>
-    <h3><%= link_to 'Login', new_user_session_path %></h3>
+    <h3><%= link_to 'Sign up', new_user_registration_path %></h3>
+    <h3><%= link_to 'Log in', new_user_session_path %></h3>
   <% end %>
   <nav>
       <a href="/carpenters">Carpenters</a>
