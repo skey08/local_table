@@ -1,13 +1,9 @@
 class CarpentersController < ApplicationController
     before_action :set_carpenter, only: [:show, :edit, :update, :destroy]
-    before_action :authenticate_user!, except: [:edit, :show]
+    before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    # if current_user
-    #   @carpenters = current_user.carpenters
-    # else
       @carpenters = Carpenter.all
-    # end
   end
 
   def new
@@ -24,6 +20,7 @@ class CarpentersController < ApplicationController
   end
 
   def show
+    @good = Good.find(params[:id])
   end
 
   def edit
