@@ -1,6 +1,6 @@
 class GoodsController < ApplicationController
     before_action :set_good, only: [:show, :edit, :update, :destroy]
-    before_action :set_carpenter, only: [:new, :create, :show, :edit, :update, :destroy]
+    # before_action :set_carpenter, only: [:new, :create, :show, :edit, :update, :destroy]
     before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
 
   def index
@@ -23,6 +23,7 @@ class GoodsController < ApplicationController
   end
 
   def show
+    @good.carpenter
   end
 
   def edit
@@ -51,8 +52,5 @@ class GoodsController < ApplicationController
   end
   def set_good
     @good = Good.find(params[:id])
-  end
-  def set_carpenter
-    @carpenter = Carpenter.find(params[:id])
   end
 end
