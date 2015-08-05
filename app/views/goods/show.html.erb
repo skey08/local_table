@@ -3,4 +3,5 @@
 <p>Price: $<%= @good.price %></p>
 <img class= "good-photo" src= <%= @good.photo_url %> > <br>
 
-<%= link_to "More from this Maker", carpenter_path(@carpenter) %>
+<%= link_to "More from this Maker", carpenter_path(@carpenter) %> <br>
+<%= link_to 'Back', carpenters_path %>

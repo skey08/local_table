@@ -9,8 +9,7 @@ class CarpentersController < ApplicationController
   end
 
   def create
-    # @user = User.find(session[:user]["id"])
-    @carpenter = Carpenter.create(carpenter_params)
+    @carpenter = Carpenter.create!(carpenter_params)
       if @carpenter.save
         redirect_to (carpenter_path(@carpenter))
       else
@@ -20,8 +19,7 @@ class CarpentersController < ApplicationController
 
   def show
     @carpenter = Carpenter.find(params[:id])
-    @good = Good.find(params[:id])
-    # @good = @carpenter.good.find(params[:id])
+    @good = @carpenter.goods
   end
 
   def edit
