@@ -1,7 +1,9 @@
 class CarpentersController < ApplicationController
+    before_action :set_post, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
 
   def index
-    @carpenters = Carpenter.all
+    @carpenters = current_user.carpenters
   end
 
   def new
@@ -9,8 +11,8 @@ class CarpentersController < ApplicationController
   end
 
   def create
-    @carpenter = Carpenter.create!(carpenter_params)
-      if @carpenter.save
+    @carpenter = current_user.carpenters.build(carpenter_params)
+    if @carpenter.save
         redirect_to (carpenter_path(@carpenter))
       else
         render 'new'

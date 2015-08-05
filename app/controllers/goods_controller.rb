@@ -1,5 +1,6 @@
 class GoodsController < ApplicationController
-
+    before_action :set_post, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
   def index
     @goods = Good.all
   end
