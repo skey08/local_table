@@ -1,5 +1,6 @@
 class GoodsController < ApplicationController
     before_action :set_good, only: [:show, :edit, :update, :destroy]
+    before_action :set_carpenter, only: [:new, :create, :show, :edit, :update, :destroy]
     before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
 
   def index
@@ -7,12 +8,10 @@ class GoodsController < ApplicationController
   end
 
   def new
-    @carpenter = Carpenter.find(params[:id])
     @good = Good.new
   end
 
   def create
-    @carpenter = Carpenter.find(params[:id])
     @good = @carpenter.goods.new(good_params)
       if @good.save
         redirect_to carpenter_goods_path(@carpenter)
@@ -22,17 +21,14 @@ class GoodsController < ApplicationController
   end
 
   def show
-    @carpenter = Carpenter.find(params[:id])
     @good.carpenter
   end
 
   def edit
-    @carpenter = Carpenter.find(params[:id])
   end
 
 
   def update
-    @carpenter = Carpenter.find(params[:id])
       if @good.save
         redirect_to carpenter_goods_path(@carpenter, @good)
       else
@@ -41,7 +37,6 @@ class GoodsController < ApplicationController
   end
 
   def destroy
-    @carpenter = Carpenter.find(params[:id])
     @good.destroy
     redirect_to carpenter_goods_path
   end
@@ -52,5 +47,8 @@ class GoodsController < ApplicationController
   end
   def set_good
     @good = Good.find(params[:id])
+  end
+  def set_carpenter
+    @carpenter = Carpenter.find(params[:carpenter_id])
   end
 end

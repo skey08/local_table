@@ -2,8 +2,8 @@
 <ul>
   <% @goods.each do |good| %>
     <ul>
-      <img class = 'good-photo' src="<%= good.photo_url %>"> <br>
       <%= link_to "#{good.make} - $#{good.price}",carpenter_good_path(good.carpenter,good) %> <br>
+      <img class = 'good-photo' src="<%= good.photo_url %>">
     </ul>
   <% end %>
 </ul>
