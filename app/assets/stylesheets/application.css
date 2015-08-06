@@ -34,6 +34,9 @@ h1 {
   font-size: 42pt;
 }
 
+h4 {
+  font-size: 20pt;
+}
 
 p {
   font-size: 20pt;
@@ -57,7 +60,8 @@ input {
   width: 13em;
   height: 1.5em;
   margin-bottom: .5em;
-  display: block
+  float: center;
+  display: block;
 }
 
 .style_image {
@@ -76,6 +80,9 @@ input {
   width: 550px;
   margin: 10pt;
   border: 2pt black;
+}
+form {
+  text-align: left;
 }
 #sign {
   text-align: left;
