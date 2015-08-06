@@ -1,6 +1,5 @@
 <h2>Edit your Carpenter Account</h2>
 
+<%= link_to 'Back', carpenters_path %>
 <%= render 'form' %>
 <%= link_to 'Delete!', carpenter_path(@carpenter), method: :delete, class: 'delete' %>
-
-<%= link_to 'Back', carpenters_path %>

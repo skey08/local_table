@@ -1,8 +1,8 @@
-<h2><%= @good.make %> <%= link_to "Edit", edit_carpenter_good_path(@carpenter, @good) %> </h2>
+<h3><%= @good.make %> <br><%= link_to "edit", edit_carpenter_good_path(@carpenter, @good) %>
 
 <p>Made By: <%= @good.carpenter.name %></p>
 <p>Price: $<%= @good.price %></p>
 <img class= "good-photo" src= <%= @good.photo_url %> > <br>
 <p> Email for more information: <%= @good.carpenter.email %> </p>
-<p><%= link_to "More from this Maker...", carpenter_path(@carpenter) %> </p>
+<p><%= link_to "See more from this Maker", carpenter_path(@carpenter) %> </p></h3>
 <%= link_to 'Back', carpenters_path %>
