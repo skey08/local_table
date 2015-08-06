@@ -1,8 +1,18 @@
+#page-wrap {
+     width: 800px;
+     margin: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
 body{
-  font-family: 'lucida grande';
+  font-family: 'helvetica';
+  text-align: center;
   max-width: 60em;
   background-color: white;
-  color: #4F4F55;
+  color: #707272;
+  width: 100%;
 }
 
 h1 {
@@ -10,9 +20,19 @@ h1 {
   font-size: 42pt;
 }
 
+h2 {
+  padding: t;
+  font-size: 28pt;
+}
+
+p {
+  font-size: 15pt;
+}
+
 li {
-  font-size: 26pt;
   text-align: center;
+  list-style-type: none;
+  font-size: 18pt;
 }
 
 a {
@@ -37,23 +57,28 @@ input {
 
 .good-photo {
   width: 550px;
-  border: 2pt solid gray;
   margin: 10pt;
+  border: 2pt black;
 }
 
-div.carpenters {
-    margin:20px;
-    padding:20px;
+#contact {
     text-decoration: none;
+    list-style-type: none;
+    font-size: 22pt;
+    border: 1pt solid black;
+  }
+
+.button {
+    text-align: center;
+    display: inline;
+    height: 50px;
+    font-size: 19pt;
+    width: 90px;
+    background: #707272;
+    color: white;
+    border: 5px #707272;
+    padding: 6pt;
 }
-
-nav {
-  display: inline;
-  width: 60px;
-  text-shadow: 20pt;
-}
-
-
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

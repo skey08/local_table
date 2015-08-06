@@ -1,10 +1,8 @@
-<h3>All Goods:</h3>
-<ul>
+<h2>Furniture</h2>
   <% @goods.each do |good| %>
-    <ul>
+    <li>
       <%= link_to "#{good.make} - $#{good.price}",carpenter_good_path(good.carpenter,good) %> <br>
       <img class = 'good-photo' src="<%= good.photo_url %>">
-    </ul>
+    </li>
   <% end %>
-</ul>
 <%= link_to 'Back', carpenters_path %>

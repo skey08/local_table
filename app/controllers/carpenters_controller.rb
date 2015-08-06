@@ -41,7 +41,7 @@ class CarpentersController < ApplicationController
 
   private
   def carpenter_params
-    params.require(:carpenter).permit(:name, :company, :email, :phone_number, :zipcode)
+    params.require(:carpenter).permit(:name, :company, :email, :phone_number, :city, :state, :zipcode)
   end
   def set_carpenter
     @carpenter = Carpenter.find(params[:id])

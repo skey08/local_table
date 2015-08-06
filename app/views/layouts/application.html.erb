@@ -7,18 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= image_tag "/logo.png", :class => "style_image" %>
-  <% if current_user %>
+  <div id="page-wrap">
+    <%= image_tag "/logo.png", :class => "style_image" %>
+    <% if current_user %>
     <h3><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></h3>
-  <% else %>
+    <% else %>
     <h3><%= link_to 'Sign up', new_user_registration_path %></h3>
     <h3><%= link_to 'Log in', new_user_session_path %></h3>
-  <% end %>
+    <% end %>
   <nav>
-      <a href="/carpenters">Carpenters</a> |
-      <a href="/goods">Furniture</a>
+      <a href="/carpenters" class="button">Carpenters</a>
+      <a href="/goods" class="button">Furniture</a>
   </nav>
 <%= yield %>
-
+  </div>
 </body>
 </html>

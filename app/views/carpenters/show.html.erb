@@ -1,22 +1,20 @@
 
-<div class="carpenterbio">
 <h2><%= @carpenter.name %> || <%= @carpenter.company %></h2>
+<div id="contact">
   <p>Contact: <%= @carpenter.email %></p>
   <p>Phone Number:<%= @carpenter.phone_number %></p>
+  <p><%= @carpenter.city %>, <%= @carpenter.state%> </p>
   <p>Zip: <%= @carpenter.zipcode %></p>
   <a href="/carpenters/<%= @carpenter.id %>/edit">*edit</a>
-<div>
+</div>
 
-<div class="goods">
+
 <h3>Goods <%= link_to "(+)", new_carpenter_good_path(@carpenter) %></h3>
-<ul>
   <% @carpenter.goods.each do |good| %>
-    <ul>
+    <li>
       <%= link_to "#{good.make}:", carpenter_good_path(@carpenter, good) %> <%= "$#{good.price}" %> <br>
       <img class = 'good-photo' src="<%= good.photo_url %>">
-    </ul>
+    </li>
   <% end %>
-</ul>
-</div>
 
 <%= link_to 'Back', carpenters_path %>

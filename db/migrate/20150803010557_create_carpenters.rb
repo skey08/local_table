@@ -5,6 +5,8 @@ class CreateCarpenters < ActiveRecord::Migration
       t.string :company
       t.string :email
       t.string :phone_number
+      t.string :city
+      t.string :state
       t.string :zipcode
       # t.integer :user_id
     end

@@ -1,14 +1,10 @@
 <h2>Carpenters </h2>
-<a href="/carpenters/new">Are you a maker? Add your portfolio +</a>
-
-<div class="carpenters">
-  <ul>
     <% @carpenters.each do |carpenter| %>
-      <ul>
+      <li>
         <a href="/carpenters/<%= carpenter.id %>">
           <%= carpenter.name %>
         </a>
-      </ul>
+      <li>
     <% end %>
-  </ul>
-</div>
+
+<a href="/carpenters/new">Add your portfolio +</a>

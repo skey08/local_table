@@ -1,7 +1,7 @@
-bob = Carpenter.create(name: "Bob Vila", company: "Best Cut", email: "bob@hotmail.com", phone_number: "1231231234", zipcode: "20004")
-sandy = Carpenter.create(name: "Sandy Wood", company: "Wood Times", email: "sandy@gmail.com", phone_number: "1231235555", zipcode: "21014")
-jack = Carpenter.create(name: "Jack Rogers", company: "Roger Designs", email: "roger@aol.com", phone_number: "1235551234", zipcode: "20009")
-nicole = Carpenter.create(name: "Nicole Curtis", company: "Between Two Furns", email: "nicole@gmail.com", phone_number: "2452455555", zipcode: "22445")
+bob = Carpenter.create(name: "Bob Vila", company: "Finishing Cut", email: "bob@hotmail.com", phone_number: "1231231234", city: "Leesburg", state: "Virginia", zipcode: "20004")
+sandy = Carpenter.create(name: "Sandy Wood", company: "Wood Times", email: "sandy@gmail.com", phone_number: "1231235555", city: "Fairfax", state: "Virginia", zipcode: "21014")
+jack = Carpenter.create(name: "Jack Rogers", company: "Roger Designs", email: "roger@aol.com", phone_number: "1235551234", city: "Washington", state: "D.C.", zipcode: "20009")
+nicole = Carpenter.create(name: "Nicole Curtis", company: "Between Two Furns", email: "nicole@gmail.com", phone_number: "2452455555", city: "Baltimore", state: "Maryland", zipcode: "22445")
 
 bob.goods.create(make: "Desk", price: 350, photo_url: "https://img0.etsystatic.com/012/0/7941757/il_fullxfull.460617782_f98i.jpg")
 bob.goods.create(make: "Sofa", price: 500, photo_url: "https://shard4.1stdibs.us.com/archivesE/upload/8885/1336/XXX_8885_1317076125_1.jpg")
