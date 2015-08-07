@@ -5,7 +5,8 @@
   <p>Phone Number:<%= @carpenter.phone_number %></p>
   <p><%= @carpenter.city %>, <%= @carpenter.state%> </p>
   <p>Zip: <%= @carpenter.zipcode %></p>
-  <a href="/carpenters/<%= @carpenter.id %>/edit">*edit</a>
+  <%= link_to "*edit", edit_carpenter_path(@carpenter) %>
+  <!-- <a href="/carpenters/<%= @carpenter.id %>/edit">*edit</a> -->
 </div>
 
 

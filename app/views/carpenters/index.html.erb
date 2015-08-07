@@ -1,10 +1,8 @@
 <h2>Carpenters </h2>
     <% @carpenters.each do |carpenter| %>
       <li>
-        <a href="/carpenters/<%= carpenter.id %>">
-          <%= carpenter.name %>
-        </a>
+        <%= link_to carpenter.name, carpenter_path(carpenter) %>
       <li>
     <% end %>
 
-<a href="/carpenters/new">Add your portfolio +</a>
+<%= link_to "Add your portfolio +", new_carpenter_path %>

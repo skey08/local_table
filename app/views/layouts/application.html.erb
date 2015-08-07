@@ -12,15 +12,15 @@
 <body>
   <div class="sign">
     <% if current_user %>
-    <p><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></p>
+      <p><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></p>
     <% else %>
-    <p><%= link_to 'Sign up', new_user_registration_path %></p>
-    <p><%= link_to 'Log in', new_user_session_path %></p>
+      <p><%= link_to 'Sign up', new_user_registration_path %></p>
+      <p><%= link_to 'Log in', new_user_session_path %></p>
     <% end %>
   </div>
   <nav>
-      <a href="/carpenters" class="button">Carpenters</a>
-      <a href="/goods" class="button">Furniture</a>
+    <%= link_to "Carpenters", carpenters_path, class: "button" %>
+    <%= link_to "Furniture", goods_path, class: "button" %>
   </nav>
 <%= yield %>
 </body>
